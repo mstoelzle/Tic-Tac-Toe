@@ -40,7 +40,7 @@ class GameController: UIView {
         resetBoard(initial: true)
     }
     
-    func resetBoard(initial: Bool) {
+    @objc func resetBoard(initial: Bool) {
         
         if !initial {
             playSound(soundName: "Page Flip", fileType: "wav")
@@ -207,7 +207,7 @@ class Tile: UIView {
         return selection
     }
     
-    func didTap(_ sender: UITapGestureRecognizer) {
+    @objc func didTap(_ sender: UITapGestureRecognizer) {
         let controller = PlaygroundPage.current.liveView as! GameController
         
         let row = Int(sender.location(in: controller).x / self.frame.width)
